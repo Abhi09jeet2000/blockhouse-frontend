@@ -1,95 +1,38 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import { Row, Col, Space , Image, Divider} from "antd";
+import CandleStick from "./charts/CandleStick";
+import LineChart from "./charts/LineChart";
+import BarChart from "./charts/BarChart";
+import PieChart from "./charts/PieChart";
+import style from './styles/charts.module.css';
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    <Space direction="vertical" size={"large"} className={style.rowContainer}>
+    <Row gutter={10} className={style.rowContainer} align={"middle"} justify={"center"}>
+      <Col>
+      <Image src="./icons/icon.png" width={29}/>
+      </Col>
+      <Col>
+      <span className={style.title}>Blockhouse</span>
+      </Col>
+      <Col span={21}>
+      <Divider/>
+      </Col>
+    </Row>
+    <Row gutter={[16, 24]} className={style.rowContainer}>
+      <Col xs={24} lg={12} className={style.colContainer}>
+       <CandleStick/>
+      </Col>
+      <Col xs={24} lg={12} className={style.colContainer}>
+      <LineChart/>
+      </Col>
+      <Col xs={24} lg={12} className={style.colContainer}>
+      <BarChart/>
+      </Col>
+      <Col xs={24} lg={12} className={style.colContainer}>
+      <PieChart/>
+      </Col>
+    </Row>
+    </Space>
   );
 }
