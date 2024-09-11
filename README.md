@@ -1,7 +1,7 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
+** Clone this repo with backend repo.(https://github.com/Abhi09jeet2000/blockhouse-backend/tree/main)
 ## Getting Started
-
+Firstly install the dependencies using npm install.
 First, run the development server:
 
 ```bash
